@@ -32,6 +32,7 @@ struct ContentView: View {
 //            
 //        }
         VStack {
+            // top action bar
             HStack {
                 Button(action: {
                     // to-do
@@ -47,7 +48,35 @@ struct ContentView: View {
                 })
             }
             .foregroundColor(.purple)
+            
+//            Spacer()
+            
+            // frame 345
+            HStack {
+                Image("puppy")
+                    .resizable()
+                    .cornerRadius(/*@START_MENU_TOKEN@*/3.0/*@END_MENU_TOKEN@*/)
+                    .shadow(radius: 3)
+                Image("puppy")
+                    .resizable()
+                    .cornerRadius(/*@START_MENU_TOKEN@*/3.0/*@END_MENU_TOKEN@*/)
+                    .shadow(radius: 3)
+                Image("puppy")
+                    .resizable()
+                    .cornerRadius(/*@START_MENU_TOKEN@*/3.0/*@END_MENU_TOKEN@*/)
+                    .shadow(radius: 3)
+            }
+            .padding(.vertical, 30.0)
+            // to-do: make dynamic
+            .frame(height: 250)
+            // to-do: create top & bottom borders
+            
             Spacer()
+            
+            // item cards list
+            VStack {
+                Text("placeholder")
+            }
         }
         .padding()
     }
