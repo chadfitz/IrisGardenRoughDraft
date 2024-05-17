@@ -49,8 +49,6 @@ struct ContentView: View {
             }
             .foregroundColor(.purple)
             
-//            Spacer()
-            
             // frame 345
             HStack {
                 Image("puppy")
@@ -71,12 +69,46 @@ struct ContentView: View {
             .frame(height: 250)
             // to-do: create top & bottom borders
             
-            Spacer()
-            
             // item cards list
             VStack {
-                Text("placeholder")
+                GeometryReader { geometry in
+                    HStack {
+                        Button(action: {
+                            // to-do
+                        }) {
+                            Text("# Notifications")
+                                .foregroundColor(.black)
+                                .frame(width: geometry.size.width * 2 / 3, height: 40)
+                                .background(Color.gray)
+                        }
+                        Button(action: {
+                            // to-do
+                        }) {
+                            Text("#")
+                                .foregroundColor(.black)
+                                .frame(width: geometry.size.width * 1 / 3, height: 40)
+                                .background(Color.gray)
+                        }
+                        .padding(0.0)
+                    }
+                }
+                .frame(height: 60)
+                
+                HStack {
+                    Text("Button")
+                }
+                HStack {
+                    Text("Button")
+                }
+                HStack {
+                    Text("Button")
+                }
+                
+                Spacer()
+                
             }
+            
+            Spacer()
         }
         .padding()
     }
