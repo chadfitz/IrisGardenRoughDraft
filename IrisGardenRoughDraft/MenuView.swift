@@ -9,11 +9,24 @@ import SwiftUI
 
 struct MenuView: View {
     var body: some View {
+        
         HStack(spacing: 0) {
             // left menu
                 VStack {
+                    Button(action: {
+                        print("X button pressed")
+                    }) {
+                        Image(systemName: "xmark")
+                            .foregroundColor(.purple)
+                    }
+                    .frame(maxWidth: .infinity, alignment: .leading)
+                    .padding()
+                    .padding(.bottom, 50.0)
+                    
                     VStack {
                         Text("Home")
+                            .frame(maxWidth: .infinity, alignment: .leading)
+                            .padding(.bottom)
                         
                         Button(action: {
                             print("Inventory button pressed")
@@ -25,6 +38,8 @@ struct MenuView: View {
                                     .foregroundColor(.black)
                             }
                         }
+                        .frame(maxWidth: .infinity, alignment: .leading)
+                        .padding(.bottom)
                         
                         Button(action: {
                             print("History button pressed")
@@ -36,6 +51,9 @@ struct MenuView: View {
                                     .foregroundColor(.black)
                             }
                         }
+                        .frame(maxWidth: .infinity, alignment: .leading)
+                        .padding(.bottom)
+                        
                     }
                     .padding()
                     .frame(maxWidth: .infinity, alignment: .leading)
@@ -46,6 +64,8 @@ struct MenuView: View {
                                 .foregroundColor(.purple)
                             Text("Batches")
                         }
+                        .frame(maxWidth: .infinity, alignment: .leading)
+                        .padding()
                         
                         Button(action: {
                             print("Receiving button pressed")
@@ -58,6 +78,7 @@ struct MenuView: View {
                                     .foregroundColor(.black)
                             }
                         }
+                        .padding(.bottom)
                         
                         Button(action: {
                             print("Outgoing button pressed")
@@ -69,6 +90,7 @@ struct MenuView: View {
                                     .foregroundColor(.black)
                             }
                         }
+                        .padding(.bottom)
                     }
                     
                     // make a navigationlink/view later?
@@ -78,6 +100,8 @@ struct MenuView: View {
                         Text("Settings")
                     }
                     .foregroundColor(.black)
+                    .frame(maxWidth: .infinity, alignment: .leading)
+                    .padding()
                     
                     // same as above
                     Button(action: {
@@ -86,12 +110,14 @@ struct MenuView: View {
                         Text("Help")
                     }
                     .foregroundColor(.black)
+                    .frame(maxWidth: .infinity, alignment: .leading)
+                    .padding()
                     
                     Spacer()
                     
                 }
                 .frame(width: UIScreen.main.bounds.width / 2)
-                .padding(.top, 100.0)
+//                .padding(.top, 100.0)
                 .edgesIgnoringSafeArea(.bottom)
                 .background(Color.white)
             
@@ -103,6 +129,14 @@ struct MenuView: View {
                         Image(systemName: "magnifyingglass")
                         Text("Search items")
                     }
+                    .padding(.horizontal)
+                    .padding(.vertical, 10)
+                    .frame(maxWidth: .infinity)
+                    .cornerRadius(15)
+                    .overlay(RoundedRectangle(cornerRadius: 15)
+                        .stroke(Color.white, lineWidth: 2)
+                        .padding(.vertical, 0)
+                        .padding(.horizontal))
                     
                     // navigation links?
                     HStack {
