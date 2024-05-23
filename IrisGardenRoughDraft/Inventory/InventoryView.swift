@@ -8,8 +8,25 @@
 import SwiftUI
 
 struct InventoryView: View {
+    
+    @State var selectedTab: Tabs = .cosmicSailor
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack{
+            InventoryTabBar(selectedTab: $selectedTab)
+            
+            ZStack {
+                CosmicSailorView()
+                    .offset(y: selectedTab == .cosmicSailor ? 0 : UIScreen.main.bounds.height)
+                
+                RomanticHydrangeaView()
+                    .offset(y: selectedTab == .romanticHydrangea ? 0 : UIScreen.main.bounds.height)
+
+                DreamingAfternoonView()
+                    .offset(y: selectedTab == .dreamingAfternoon ? 0 : UIScreen.main.bounds.height)
+            }
+
+        }
     }
 }
 

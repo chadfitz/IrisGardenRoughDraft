@@ -81,7 +81,6 @@ struct ContentView: View {
                 }
                 MenuView(showMenu: self.$showMenu)
                     .offset(x: showMenu ? 0 : UIScreen.main.bounds.width)
-//                    .edgesIgnoringSafeArea(/*@START_MENU_TOKEN@*/.all/*@END_MENU_TOKEN@*/)
             }
         }
     }
