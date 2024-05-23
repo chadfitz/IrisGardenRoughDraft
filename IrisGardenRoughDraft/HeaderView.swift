@@ -8,18 +8,20 @@
 import SwiftUI
 
 struct HeaderView: View {
+    @Binding var showMenu: Bool
+    
     var body: some View {
         HStack {
             Button(action: {
-//                self.showMenu.toggle()
+                self.showMenu.toggle()
                 print("menubutton press")
             }, label: {
-//                if showMenu {
-//                    Image(systemName: "xmark")
-//                        .foregroundColor(.purple)
-//                } else {
+                if showMenu {
+                    Image(systemName: "xmark")
+                        .foregroundColor(.purple)
+                } else {
                     Image(systemName: "line.horizontal.3")
-//                }
+                }
             })
             
             Text("Home")
@@ -33,6 +35,8 @@ struct HeaderView: View {
             })
         }
         .foregroundColor(.purple)
+        .offset(x: showMenu ? UIScreen.main.bounds.width : 0)
+        .edgesIgnoringSafeArea(/*@START_MENU_TOKEN@*/.all/*@END_MENU_TOKEN@*/)
         .padding()
         
         Spacer()
@@ -40,5 +44,5 @@ struct HeaderView: View {
 }
 
 #Preview {
-    HeaderView()
+    HeaderView(showMenu: .constant(false))
 }

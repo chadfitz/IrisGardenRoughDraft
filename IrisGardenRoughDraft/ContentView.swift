@@ -16,7 +16,7 @@ struct ContentView: View {
         NavigationView {
             ZStack {
                 VStack {
-                    HeaderView()
+                    HeaderView(showMenu: self.$showMenu)
                     
                     // frame 345
                     HStack {
@@ -79,9 +79,9 @@ struct ContentView: View {
                     
                     Spacer()
                 }
-                MenuView()
+                MenuView(showMenu: self.$showMenu)
                     .offset(x: showMenu ? 0 : UIScreen.main.bounds.width)
-                    .edgesIgnoringSafeArea(/*@START_MENU_TOKEN@*/.all/*@END_MENU_TOKEN@*/)
+//                    .edgesIgnoringSafeArea(/*@START_MENU_TOKEN@*/.all/*@END_MENU_TOKEN@*/)
             }
         }
     }

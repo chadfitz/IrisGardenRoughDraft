@@ -8,6 +8,9 @@
 import SwiftUI
 
 struct MenuView: View {
+    
+    @Binding var showMenu: Bool
+    
     var body: some View {
         
         HStack(spacing: 0) {
@@ -15,6 +18,7 @@ struct MenuView: View {
                 VStack {
                     Button(action: {
                         print("X button pressed")
+                        self.showMenu.toggle()
                     }) {
                         Image(systemName: "xmark")
                             .foregroundColor(.purple)
@@ -117,7 +121,6 @@ struct MenuView: View {
                     
                 }
                 .frame(width: UIScreen.main.bounds.width / 2)
-//                .padding(.top, 100.0)
                 .edgesIgnoringSafeArea(.bottom)
                 .background(Color.white)
             
@@ -184,5 +187,5 @@ struct MenuView: View {
 }
 
 #Preview {
-    MenuView()
+    MenuView(showMenu: .constant(true))
 }
