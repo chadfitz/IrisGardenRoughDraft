@@ -11,9 +11,9 @@
 		EB5360AD2BF803AE0052837F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB5360AC2BF803AE0052837F /* ContentView.swift */; };
 		EB5360AF2BF803B00052837F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EB5360AE2BF803B00052837F /* Assets.xcassets */; };
 		EB5360B22BF803B00052837F /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EB5360B12BF803B00052837F /* Preview Assets.xcassets */; };
-		EB5360B92BFBD7EB0052837F /* MenuLeftView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB5360B82BFBD7EB0052837F /* MenuLeftView.swift */; };
-		EB5360BB2BFBE3FD0052837F /* MenuRightView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB5360BA2BFBE3FD0052837F /* MenuRightView.swift */; };
 		EB5360BD2BFC102B0052837F /* MenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB5360BC2BFC102B0052837F /* MenuView.swift */; };
+		EB6623B42BFD2CE6006F9FEA /* InventoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB6623B32BFD2CE6006F9FEA /* InventoryView.swift */; };
+		EB6623B82BFFCF30006F9FEA /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB6623B72BFFCF30006F9FEA /* HeaderView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,9 +22,9 @@
 		EB5360AC2BF803AE0052837F /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		EB5360AE2BF803B00052837F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EB5360B12BF803B00052837F /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		EB5360B82BFBD7EB0052837F /* MenuLeftView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuLeftView.swift; sourceTree = "<group>"; };
-		EB5360BA2BFBE3FD0052837F /* MenuRightView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuRightView.swift; sourceTree = "<group>"; };
 		EB5360BC2BFC102B0052837F /* MenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuView.swift; sourceTree = "<group>"; };
+		EB6623B32BFD2CE6006F9FEA /* InventoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InventoryView.swift; sourceTree = "<group>"; };
+		EB6623B72BFFCF30006F9FEA /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,10 +57,10 @@
 		EB5360A92BF803AE0052837F /* IrisGardenRoughDraft */ = {
 			isa = PBXGroup;
 			children = (
+				EB6623B22BFD2CBC006F9FEA /* Inventory */,
 				EB5360AA2BF803AE0052837F /* IrisGardenRoughDraftApp.swift */,
 				EB5360AC2BF803AE0052837F /* ContentView.swift */,
-				EB5360B82BFBD7EB0052837F /* MenuLeftView.swift */,
-				EB5360BA2BFBE3FD0052837F /* MenuRightView.swift */,
+				EB6623B72BFFCF30006F9FEA /* HeaderView.swift */,
 				EB5360BC2BFC102B0052837F /* MenuView.swift */,
 				EB5360AE2BF803B00052837F /* Assets.xcassets */,
 				EB5360B02BF803B00052837F /* Preview Content */,
@@ -74,6 +74,14 @@
 				EB5360B12BF803B00052837F /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		EB6623B22BFD2CBC006F9FEA /* Inventory */ = {
+			isa = PBXGroup;
+			children = (
+				EB6623B32BFD2CE6006F9FEA /* InventoryView.swift */,
+			);
+			path = Inventory;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -147,10 +155,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				EB5360BD2BFC102B0052837F /* MenuView.swift in Sources */,
-				EB5360BB2BFBE3FD0052837F /* MenuRightView.swift in Sources */,
 				EB5360AD2BF803AE0052837F /* ContentView.swift in Sources */,
+				EB6623B42BFD2CE6006F9FEA /* InventoryView.swift in Sources */,
 				EB5360AB2BF803AE0052837F /* IrisGardenRoughDraftApp.swift in Sources */,
-				EB5360B92BFBD7EB0052837F /* MenuLeftView.swift in Sources */,
+				EB6623B82BFFCF30006F9FEA /* HeaderView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

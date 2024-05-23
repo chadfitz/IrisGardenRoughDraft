@@ -16,32 +16,7 @@ struct ContentView: View {
         NavigationView {
             ZStack {
                 VStack {
-                    // top action bar
-                    HStack {
-                        Button(action: {
-                            // to-do
-                            self.showMenu.toggle()
-                        }, label: {
-                            if showMenu {
-                                Image(systemName: "xmark")
-                                    .foregroundColor(.purple)
-                            } else {
-                                Image(systemName: "line.horizontal.3")
-                            }
-                        })
-                        .zIndex(1.0)
-                        
-                        Text("Home")
-                        
-                        Spacer()
-                        
-                        Button(action: {
-                            // to-do
-                        }, label: {
-                            Image(systemName: "gearshape.fill")
-                        })
-                    }
-                    .foregroundColor(.purple)
+                    HeaderView()
                     
                     // frame 345
                     HStack {
