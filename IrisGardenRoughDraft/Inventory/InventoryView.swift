@@ -9,23 +9,31 @@ import SwiftUI
 
 struct InventoryView: View {
     
+    @State private var showMenu: Bool = false
     @State var selectedTab: Tabs = .cosmicSailor
     
     var body: some View {
-        VStack{
-            InventoryTabBar(selectedTab: $selectedTab)
-            
-            ZStack {
-                CosmicSailorView()
-                    .offset(y: selectedTab == .cosmicSailor ? 0 : UIScreen.main.bounds.height)
+        ZStack {
+            VStack{
+                HeaderView(showMenu: self.$showMenu, headerTitle: "My Inventory")
                 
-                RomanticHydrangeaView()
-                    .offset(y: selectedTab == .romanticHydrangea ? 0 : UIScreen.main.bounds.height)
+                InventoryTabBar(selectedTab: $selectedTab)
+                
+                ZStack {
+                    CosmicSailorView()
+                        .offset(y: selectedTab == .cosmicSailor ? 0 : UIScreen.main.bounds.height)
+                    
+                    RomanticHydrangeaView()
+                        .offset(y: selectedTab == .romanticHydrangea ? 0 : UIScreen.main.bounds.height)
 
-                DreamingAfternoonView()
-                    .offset(y: selectedTab == .dreamingAfternoon ? 0 : UIScreen.main.bounds.height)
+                    DreamingAfternoonView()
+                        .offset(y: selectedTab == .dreamingAfternoon ? 0 : UIScreen.main.bounds.height)
+                }
+
             }
-
+            
+            MenuView(showMenu: self.$showMenu)
+                .offset(x: showMenu ? 0 : UIScreen.main.bounds.width)
         }
     }
 }

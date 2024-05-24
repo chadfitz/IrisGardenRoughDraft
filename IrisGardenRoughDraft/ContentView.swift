@@ -16,7 +16,7 @@ struct ContentView: View {
         NavigationView {
             ZStack {
                 VStack {
-                    HeaderView(showMenu: self.$showMenu)
+                    HeaderView(showMenu: self.$showMenu, headerTitle: "Home")
                     
                     // frame 345
                     HStack {

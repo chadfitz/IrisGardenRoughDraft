@@ -9,12 +9,12 @@ import SwiftUI
 
 struct HeaderView: View {
     @Binding var showMenu: Bool
-    
+    var headerTitle: String
+
     var body: some View {
         HStack {
             Button(action: {
                 self.showMenu.toggle()
-                print("menubutton press")
             }, label: {
                 if showMenu {
                     Image(systemName: "xmark")
@@ -24,7 +24,7 @@ struct HeaderView: View {
                 }
             })
             
-            Text("Home")
+            Text(headerTitle)
             
             Spacer()
             
@@ -44,5 +44,5 @@ struct HeaderView: View {
 }
 
 #Preview {
-    HeaderView(showMenu: .constant(false))
+    HeaderView(showMenu: .constant(false), headerTitle: "Home")
 }
