@@ -13,119 +13,124 @@ struct MenuView: View {
     
     var body: some View {
         
-        HStack(spacing: 0) {
-            // left menu
-                VStack {
-                    Button(action: {
-                        print("X button pressed")
-                        self.showMenu.toggle()
-                    }) {
-                        Image(systemName: "xmark")
-                            .foregroundColor(.purple)
-                    }
-                    .frame(maxWidth: .infinity, alignment: .leading)
-                    .padding()
-                    .padding(.bottom, 50.0)
-                    
+        NavigationStack {
+            HStack(spacing: 0) {
+                // left menu
                     VStack {
-                        Text("Home")
-                            .frame(maxWidth: .infinity, alignment: .leading)
-                            .padding(.bottom)
-                        
                         Button(action: {
-                            print("Inventory button pressed")
+                            print("X button pressed")
+                            self.showMenu.toggle()
                         }) {
-                            HStack {
-                                Image(systemName: "shippingbox")
-                                    .foregroundColor(.purple)
-                                Text("My Inventory")
-                                    .foregroundColor(.black)
-                            }
-                        }
-                        .frame(maxWidth: .infinity, alignment: .leading)
-                        .padding(.bottom)
-                        
-                        Button(action: {
-                            print("History button pressed")
-                        }) {
-                            HStack {
-                                Image(systemName: "clock.arrow.circlepath")
-                                    .foregroundColor(.purple)
-                                Text("History")
-                                    .foregroundColor(.black)
-                            }
-                        }
-                        .frame(maxWidth: .infinity, alignment: .leading)
-                        .padding(.bottom)
-                        
-                    }
-                    .padding()
-                    .frame(maxWidth: .infinity, alignment: .leading)
-                    
-                    VStack {
-                        HStack {
-                            Image(systemName: "shippingbox")
+                            Image(systemName: "xmark")
                                 .foregroundColor(.purple)
-                            Text("Batches")
                         }
                         .frame(maxWidth: .infinity, alignment: .leading)
                         .padding()
+                        .padding(.bottom, 50.0)
                         
-                        Button(action: {
-                            print("Receiving button pressed")
-                        }) {
-                            HStack {
-                                Image(systemName: "plus")
-                                    .foregroundColor(.green)
-
-                                Text("Receiving")
-                                    .foregroundColor(.black)
+                        VStack {
+                            NavigationLink("Home") {
+                                ContentView()
+                                    .navigationBarBackButtonHidden(true)
                             }
+                            .foregroundColor(.black)
+                            .frame(maxWidth: .infinity, alignment: .leading)
+                            .padding(.bottom)
+                            
+                            NavigationLink(destination: InventoryView()
+                                .navigationBarBackButtonHidden(true)
+                            ) {
+                                HStack {
+                                    Image(systemName: "shippingbox")
+                                        .foregroundColor(.purple)
+                                    Text("My Inventory")
+                                        .foregroundColor(.black)
+                                }
+                            }
+                            .frame(maxWidth: .infinity, alignment: .leading)
+                            .padding(.bottom)
+                            
+                            Button(action: {
+                                print("History button pressed")
+                            }) {
+                                HStack {
+                                    Image(systemName: "clock.arrow.circlepath")
+                                        .foregroundColor(.purple)
+                                    Text("History")
+                                        .foregroundColor(.black)
+                                }
+                            }
+                            .frame(maxWidth: .infinity, alignment: .leading)
+                            .padding(.bottom)
+                            
                         }
-                        .padding(.bottom)
+                        .padding()
+                        .frame(maxWidth: .infinity, alignment: .leading)
                         
-                        Button(action: {
-                            print("Outgoing button pressed")
-                        }) {
+                        VStack {
                             HStack {
-                                Image(systemName: "minus")
-                                    .foregroundColor(.red)
-                                Text("Outgoing")
-                                    .foregroundColor(.black)
+                                Image(systemName: "shippingbox")
+                                    .foregroundColor(.purple)
+                                Text("Batches")
                             }
+                            .frame(maxWidth: .infinity, alignment: .leading)
+                            .padding()
+                            
+                            Button(action: {
+                                print("Receiving button pressed")
+                            }) {
+                                HStack {
+                                    Image(systemName: "plus")
+                                        .foregroundColor(.green)
+                                    
+                                    Text("Receiving")
+                                        .foregroundColor(.black)
+                                }
+                            }
+                            .padding(.bottom)
+                            
+                            Button(action: {
+                                print("Outgoing button pressed")
+                            }) {
+                                HStack {
+                                    Image(systemName: "minus")
+                                        .foregroundColor(.red)
+                                    Text("Outgoing")
+                                        .foregroundColor(.black)
+                                }
+                            }
+                            .padding(.bottom)
                         }
-                        .padding(.bottom)
+                        
+                        // make a navigationlink/view later?
+                        Button(action: {
+                            print("Settings button pressed")
+                        }) {
+                            Text("Settings")
+                        }
+                        .foregroundColor(.black)
+                        .frame(maxWidth: .infinity, alignment: .leading)
+                        .padding()
+                        
+                        // same as above
+                        Button(action: {
+                            print("Help button pressed")
+                        }) {
+                            Text("Help")
+                        }
+                        .foregroundColor(.black)
+                        .frame(maxWidth: .infinity, alignment: .leading)
+                        .padding()
+                        
+                        Spacer()
+                        
                     }
-                    
-                    // make a navigationlink/view later?
-                    Button(action: {
-                        print("Settings button pressed")
-                    }) {
-                        Text("Settings")
-                    }
-                    .foregroundColor(.black)
-                    .frame(maxWidth: .infinity, alignment: .leading)
-                    .padding()
-                    
-                    // same as above
-                    Button(action: {
-                        print("Help button pressed")
-                    }) {
-                        Text("Help")
-                    }
-                    .foregroundColor(.black)
-                    .frame(maxWidth: .infinity, alignment: .leading)
-                    .padding()
-                    
-                    Spacer()
-                    
-                }
                 .frame(width: UIScreen.main.bounds.width / 2)
                 .edgesIgnoringSafeArea(.bottom)
                 .background(Color.white)
-            
-            
-            // right menu
+                
+                
+                // right menu
                 VStack {
                     // make search bar later
                     HStack {
@@ -183,6 +188,7 @@ struct MenuView: View {
                 .edgesIgnoringSafeArea(.bottom)
                 .background(Color.purple)
             }
+        }
     }
 }
 
